@@ -25,4 +25,6 @@ def test_open_webdriver_page(browser):
     page.open_page()
     time.sleep(2)
     page.go_to_webdriver()
-
+    page = WebdriverPage(browser, link)
+    time.sleep(2)
+    page.should_be_webdriver_link()
