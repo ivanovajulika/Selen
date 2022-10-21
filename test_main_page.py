@@ -1,6 +1,7 @@
 import time
 from .pages.main_page import MainPage
 from .pages.document_page import DocumentPage
+from .pages.webdriver_page import WebdriverPage
 
 link = "https://www.selenium.dev/"
 
@@ -18,8 +19,10 @@ def test_open_documentation(browser):
 
 # Тест проверяет, что пользователь может перейти слева в меню в страницу WebDriver
 def test_open_webdriver_page(browser):
+    link = 'https://www.selenium.dev/documentation/'
     page = DocumentPage(browser, link)
     # создает экземпляр страницы Documentation
     page.open_page()
     time.sleep(2)
+    page.go_to_webdriver()
 

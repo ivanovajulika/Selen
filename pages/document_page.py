@@ -13,3 +13,6 @@ class DocumentPage(BasePage):
     def should_be_menu_document(self):
         assert self.element_is_present(*DocumPageLocators.MENU_LINK)
 
+    def go_to_webdriver(self):
+        self.browser.find_element(*DocumPageLocators.WEBDRIVER_LINK).click()
+

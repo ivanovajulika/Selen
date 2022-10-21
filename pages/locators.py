@@ -7,3 +7,4 @@ class MainPageLocators():
 class DocumPageLocators():
 
     MENU_LINK = (By.XPATH, "//span[@class='td-sidebar-nav-active-item']")
+    WEBDRIVER_LINK = (By.XPATH, '//*[@id="m-documentationwebdriver"]')
