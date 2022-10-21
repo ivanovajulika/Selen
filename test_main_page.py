@@ -2,6 +2,7 @@ import time
 from .pages.main_page import MainPage
 from .pages.document_page import DocumentPage
 from .pages.webdriver_page import WebdriverPage
+from selenium.webdriver.common.keys import Keys
 
 link = "https://www.selenium.dev/"
 
@@ -28,3 +29,14 @@ def test_open_webdriver_page(browser):
     page = WebdriverPage(browser, link)
     time.sleep(2)
     page.should_be_webdriver_link()
+
+def test_should_use_search(browser):
+    page = MainPage(browser, link)
+    page.open_page()
+    time.sleep(2)
+    page.should_be_search_btn()
+    time.sleep(5)
+    page.use_search(search=str('Blog'))
+    time.sleep(5)
+
+
