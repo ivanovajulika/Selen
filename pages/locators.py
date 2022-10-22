@@ -12,3 +12,4 @@ class DocumPageLocators():
 
 class SearchLocators():
     OPEN_SEARCH = (By.XPATH, '//*[@id="docsearch-input"]')
+    ENTER_SEARCH = (By.XPATH, '')

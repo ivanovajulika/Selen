@@ -2,7 +2,7 @@ import time
 from .pages.main_page import MainPage
 from .pages.document_page import DocumentPage
 from .pages.webdriver_page import WebdriverPage
-from selenium.webdriver.common.keys import Keys
+
 
 link = "https://www.selenium.dev/"
 
@@ -18,7 +18,7 @@ def test_open_documentation(browser):
     page = DocumentPage(browser, link)
     page.should_be_document_page()
 
-# Тест проверяет, что пользователь может перейти слева в меню в страницу WebDriver
+# Тест проверяет, что пользователь может перейти слева в меню на страницу WebDriver
 def test_open_webdriver_page(browser):
     link = 'https://www.selenium.dev/documentation/'
     page = DocumentPage(browser, link)
@@ -30,13 +30,14 @@ def test_open_webdriver_page(browser):
     time.sleep(2)
     page.should_be_webdriver_link()
 
+# Тест проверяет, что пользователь может ввести слово в поиск и перейти по нему
 def test_should_use_search(browser):
     page = MainPage(browser, link)
     page.open_page()
     time.sleep(2)
     page.should_be_search_btn()
-    time.sleep(5)
-    page.use_search(search=str('Blog'))
-    time.sleep(5)
+    time.sleep(2)
+    page.use_search(search='grid')
+    time.sleep(10)
 
 

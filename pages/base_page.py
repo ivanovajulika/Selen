@@ -8,6 +8,7 @@ class BasePage():
         self.link = link
 
     def open_page(self):
+        self.browser.maximize_window()
         self.browser.get(self.link)
 
     def element_is_present(self, method, locator):
