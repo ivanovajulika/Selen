@@ -6,7 +6,8 @@ from selenium.webdriver.chrome.service import Service
 @pytest.fixture(scope='class')
 def browser():
     print('\nstart browser...')
-    browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+    browser = webdriver.Chrome(service=Service(ChromeDriverManager().install())
+    browser.implicitly_wait(10)
     yield browser
     print('\nquit browser...')
     browser.quit()
