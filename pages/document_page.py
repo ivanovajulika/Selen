@@ -5,6 +5,7 @@ class DocumPageLocators():
     MENU_LINK = (By.XPATH, "//span[@class='td-sidebar-nav-active-item']")
     WEBDRIVER_LINK = (By.XPATH, '//*[@id="m-documentationwebdriver"]')
 
+
 class DocumentPage(BasePage):
 
     def should_be_document_page(self):
