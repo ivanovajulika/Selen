@@ -1,3 +1,5 @@
+import time
+
 from .pages.main_page import MainPage
 from .pages.document_page import DocumentPage
 from .pages.webdriver_page import WebdriverPage
@@ -10,10 +12,10 @@ link = "https://www.selenium.dev/"
 def test_open_documentation(browser):
     page = MainPage(browser, link)
     page.open_page()
-    browser.implicitly_wait(0.5)
+    time.sleep(2)
     page.should_be_link_to_document_page()
     page.go_to_documentation()
-    browser.implicitly_wait(0.5)
+    time.sleep(2)
     # Проверяем что это точно страница Documentation
     page = DocumentPage(browser, link)
     page.should_be_document_page()
@@ -23,10 +25,10 @@ def test_open_documentation(browser):
 def test_open_readmore_webdriver(browser):
     page = MainPage(browser, link)
     page.open_page()
-    browser.implicitly_wait(0.5)
+    time.sleep(2)
     page.should_be_readmore_btn()
     page.go_to_readmore()
-    browser.implicitly_wait(0.5)
+    time.sleep(2)
     # Проверяем что это точно страница WebDriver
     page = WebdriverPage(browser, link)
     page.should_be_webdriver_link()
@@ -35,10 +37,10 @@ def test_open_readmore_webdriver(browser):
 def test_open_history(browser):
     page = MainPage(browser, link)
     page.open_page()
-    browser.implicitly_wait(0.5)
+    time.sleep(2)
     page.should_be_link_to_about_menu()
     page.go_to_about_menu()
-    browser.implicitly_wait(0.5)
+    time.sleep(2)
     #Переходим на страницу History
     page.should_be_link_to_history()
     page.go_to_history()
@@ -53,19 +55,20 @@ def test_open_webdriver_page(browser):
     page = DocumentPage(browser, link)
     # создает экземпляр страницы Documentation
     page.open_page()
-    browser.implicitly_wait(0.5)
+    time.sleep(2)
     page.go_to_webdriver()
     page = WebdriverPage(browser, link)
-    browser.implicitly_wait(0.5)
+    time.sleep(2)
     page.should_be_webdriver_link()
 
 # Тест проверяет, что пользователь может ввести слово в поиск и перейти по нему
 def test_should_use_search(browser):
     page = MainPage(browser, link)
     page.open_page()
-    browser.implicitly_wait(0.5)
+    time.sleep(2)
     page.should_be_search_btn()
-    browser.implicitly_wait(0.5)
+    time.sleep(2)
     page.use_search(search='grid')
+    time.sleep(10)
 
 

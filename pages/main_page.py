@@ -1,6 +1,7 @@
 from .locators import MainPageLocators
 from .base_page import BasePage
 from .locators import SearchLocators
+from selenium.webdriver.common.keys import Keys
 
 
 class MainPage(BasePage):
@@ -23,11 +24,7 @@ class MainPage(BasePage):
     def use_search(self, search):
         self.browser.find_element(*MainPageLocators.SEARCH_BTN).click()
         search_input = self.browser.find_element(*SearchLocators.OPEN_SEARCH)
-        search_input.send_keys(search)
-        self.browser.implicitly_wait(5)
-        self.browser.find_element(*SearchLocators.ENTER_SEARCH).click()
-        self.browser.implicitly_wait(0.5)
-
+        search_input.send_keys(search + Keys.ENTER)
 
     def should_be_link_to_about_menu(self):
         assert self.element_is_present(*MainPageLocators.ABOUT_LINK)

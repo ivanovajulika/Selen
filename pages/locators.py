@@ -15,4 +15,4 @@ class DocumPageLocators():
 
 class SearchLocators():
     OPEN_SEARCH = (By.XPATH, '//*[@id="docsearch-input"]')
-    ENTER_SEARCH = (By.CSS_SELECTOR, '#docsearch-item-0 > a > div > div.DocSearch-Hit-action > svg')
+    ENTER_SEARCH = (By.XPATH, '')
