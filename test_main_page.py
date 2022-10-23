@@ -3,7 +3,7 @@ import time
 from .pages.main_page import MainPage
 from .pages.document_page import DocumentPage
 from .pages.webdriver_page import WebdriverPage
-from pages.history_page import HistoryPage
+from .pages.history_page import HistoryPage
 
 
 link = "https://www.selenium.dev/"
@@ -59,5 +59,7 @@ def test_should_use_search(browser):
     page.open_page()
     page.should_be_search_btn()
     page.use_search(search='grid')
+
+
 
 

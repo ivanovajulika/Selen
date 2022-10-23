@@ -1,10 +1,10 @@
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
 
-class SearchLocators():
-    OPEN_SEARCH = (By.XPATH, '//*[@id="docsearch-input"]')
-    ENTER_SEARCH = (By.XPATH, '')
 
+
+class Logo_locators():
+    LOGO = (By.ID, 'selenium_logo')
 
 class BasePage():
 
@@ -13,7 +13,6 @@ class BasePage():
         self.link = link
 
     def open_page(self):
-        self.browser.maximize_window()
         self.browser.get(self.link)
 
     def element_is_present(self, method, locator):
@@ -22,3 +21,8 @@ class BasePage():
         except NoSuchElementException:
             return False
         return True
+
+# метод позволяет вернуться  c любой cтраницы на главную, кликнув по логотипу
+    def go_to_main_paige(self):
+        self.browser.find_element(*Logo_locators.LOGO).click()
+

@@ -1,5 +1,6 @@
-
+from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from .base_page import BasePage
 
 class MainPageLocators():
 
@@ -9,6 +10,9 @@ class MainPageLocators():
     ABOUT_LINK = (By.XPATH, '//*[@id="main_navbar"]/ul/li[2]')
     HISTORY_LINK = (By.XPATH, '//*[@id="main_navbar"]/ul/li[2]/div/a[5]')
 
+class SearchLocators():
+    OPEN_SEARCH = (By.XPATH, '//*[@id="docsearch-input"]')
+    ENTER_SEARCH = (By.XPATH, '')
 
 
 class MainPage(BasePage):
