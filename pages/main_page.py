@@ -1,7 +1,14 @@
-from .locators import MainPageLocators
-from .base_page import BasePage
-from .locators import SearchLocators
+
 from selenium.webdriver.common.keys import Keys
+
+class MainPageLocators():
+
+    DOCUMENT_LINK = (By.XPATH, "//a[@href='/documentation']")
+    SEARCH_BTN = (By.XPATH, '//*[@id="docsearch"]/button/span[1]/span')
+    WEBDRIVER_BTN = (By.XPATH, '/html/body/div/main/section[2]/div/div/div[1]/div/div[2]/div/a')
+    ABOUT_LINK = (By.XPATH, '//*[@id="main_navbar"]/ul/li[2]')
+    HISTORY_LINK = (By.XPATH, '//*[@id="main_navbar"]/ul/li[2]/div/a[5]')
+
 
 
 class MainPage(BasePage):

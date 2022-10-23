@@ -1,4 +1,9 @@
 from selenium.common import NoSuchElementException
+from selenium.webdriver.common.by import By
+
+class SearchLocators():
+    OPEN_SEARCH = (By.XPATH, '//*[@id="docsearch-input"]')
+    ENTER_SEARCH = (By.XPATH, '')
 
 
 class BasePage():

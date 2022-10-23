@@ -1,5 +1,9 @@
-from .locators import DocumPageLocators
 from .base_page import BasePage
+from selenium.webdriver.common.by import By
+class DocumPageLocators():
+
+    MENU_LINK = (By.XPATH, "//span[@class='td-sidebar-nav-active-item']")
+    WEBDRIVER_LINK = (By.XPATH, '//*[@id="m-documentationwebdriver"]')
 
 class DocumentPage(BasePage):
 
