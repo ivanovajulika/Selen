@@ -1,8 +1,8 @@
 from .pages.main_page import MainPage
 from .pages.document_page import DocumentPage
 from .pages.webdriver_page import WebdriverPage
-from pages.history_page import HistoryPage
-
+from .pages.history_page import HistoryPage
+import time
 
 link = "https://www.selenium.dev/"
 

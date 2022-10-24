@@ -1,5 +1,6 @@
 from .base_page import BasePage
 
+
 class HistoryPage(BasePage):
 
     def should_be_history_link(self):
