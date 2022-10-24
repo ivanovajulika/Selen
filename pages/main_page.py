@@ -1,5 +1,3 @@
-import time
-
 from .locators import MainPageLocators
 from .base_page import BasePage
 from .locators import SearchLocators
@@ -26,11 +24,8 @@ class MainPage(BasePage):
         self.browser.find_element(*MainPageLocators.SEARCH_BTN).click()
         search_input = self.browser.find_element(*SearchLocators.OPEN_SEARCH)
         search_input.send_keys(search)
-        self.browser.implicitly_wait(0.5)
+        self.browser.implicitly_wait(10)
         self.browser.find_element(*SearchLocators.ENTER_SEARCH).click()
-        self.browser.implicitly_wait(0.5)
-
-
 
     def should_be_link_to_about_menu(self):
         assert self.element_is_present(*MainPageLocators.ABOUT_LINK)
