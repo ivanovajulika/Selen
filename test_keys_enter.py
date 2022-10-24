@@ -13,7 +13,7 @@ def test_go_translation():
 
     driver.implicitly_wait(0.5)
 
-    text_box = driver.find_element(By.XPATH, value='/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input')
+    text_box = driver.find_element(By.XPATH, value='//div/div[2]/input')
     
     text_box.send_keys("Переводчик"+Keys.ENTER)
 
