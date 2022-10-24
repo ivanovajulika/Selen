@@ -2,7 +2,11 @@ from .pages.main_page import MainPage
 from .pages.document_page import DocumentPage
 from .pages.webdriver_page import WebdriverPage
 from .pages.history_page import HistoryPage
+<<<<<<< HEAD
 import time
+=======
+
+>>>>>>> 7024eee08af98490f10237c02038bd51a4b979ce
 
 link = "https://www.selenium.dev/"
 
