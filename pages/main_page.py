@@ -38,3 +38,4 @@ class MainPage(BasePage):
 
     def go_to_history(self):
         self.browser.find_element(*MainPageLocators.HISTORY_LINK).click()
+        

@@ -1,6 +1,7 @@
 from .locators import DocumPageLocators
 from .base_page import BasePage
 
+
 class DocumentPage(BasePage):
 
     def should_be_document_page(self):
@@ -15,4 +16,3 @@ class DocumentPage(BasePage):
 
     def go_to_webdriver(self):
         self.browser.find_element(*DocumPageLocators.WEBDRIVER_LINK).click()
-
