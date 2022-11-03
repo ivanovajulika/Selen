@@ -32,12 +32,16 @@ jobs:
         run: chrome --version
       - name: install Poetry
         run: curl -sSL https://install.python-poetry.org | python3 -
-      - name: install dependencies
-        run: poetry install
-      - name: Run the pytest
-        run: poetry run pytest -v
+      # - name: install dependencies
+      #   run: poetry install
+      # - name: Run the pytest
+      #   run: poetry run pytest -v
+      - name: Install Python dependencies
+        uses: py-actions/py-dependency-install@v3
+        with:
+          path: "Selen/requirements.txt"
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: report
-          path: path/to/artifact/ # or path/to/artifact
+          path: Selen/artifact/ # or path/to/artifact
