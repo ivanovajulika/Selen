@@ -38,4 +38,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: report
-          path: Selen/artifact/ # or path/to/artifact
+          path: /home/runner/work/Selen/Selen/report/
