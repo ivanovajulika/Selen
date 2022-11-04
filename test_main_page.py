@@ -17,8 +17,10 @@ def test_open_documentation(browser):
     page = DocumentPage(browser, link)
     page.should_be_document_page()
 
+
 # Тест проверяет, что пользователь может перейти с главной страницы сайта по кнопке 'READ MORE'
 # на страницу WebDriver
+
 
 def test_open_readmore_webdriver(browser):
     page = MainPage(browser, link)
@@ -29,7 +31,9 @@ def test_open_readmore_webdriver(browser):
     page = WebdriverPage(browser, link)
     page.should_be_webdriver_link()
 
+
 # Тест проверяет, что пользователь может перейти с главной страницы сайта на страницу Selenium History
+
 
 def test_open_history(browser):
     page = MainPage(browser, link)
@@ -37,7 +41,7 @@ def test_open_history(browser):
     page.should_be_link_to_about_menu()
     page.go_to_about_menu()
 
-    #Переходим на страницу History
+    # Переходим на страницу History
 
     page.should_be_link_to_history()
     page.go_to_history()
@@ -47,11 +51,12 @@ def test_open_history(browser):
     page = HistoryPage(browser, link)
     page.should_be_history_link()
 
-    
+
 # Тест проверяет, что пользователь может перейти слева в меню на страницу WebDriver
 
+
 def test_open_webdriver_page(browser):
-    link = 'https://www.selenium.dev/documentation/'
+    link = "https://www.selenium.dev/documentation/"
     page = DocumentPage(browser, link)
 
     # создает экземпляр страницы Documentation
@@ -61,10 +66,12 @@ def test_open_webdriver_page(browser):
     page = WebdriverPage(browser, link)
     page.should_be_webdriver_link()
 
+
 # Тест проверяет, что пользователь может ввести слово в поиск и перейти по нему
+
 
 def test_should_use_search(browser):
     page = MainPage(browser, link)
     page.open_page()
     page.should_be_search_btn()
-    page.use_search(search='grid')
+    page.use_search(search="grid")
