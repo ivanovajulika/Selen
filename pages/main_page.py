@@ -4,7 +4,6 @@ from .locators import SearchLocators
 
 
 class MainPage(BasePage):
-
     def should_be_link_to_document_page(self):
         assert self.element_is_present(*MainPageLocators.DOCUMENT_LINK)
 
@@ -38,4 +37,3 @@ class MainPage(BasePage):
 
     def go_to_history(self):
         self.browser.find_element(*MainPageLocators.HISTORY_LINK).click()
-        
