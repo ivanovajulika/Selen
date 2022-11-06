@@ -1,5 +1,15 @@
 name: selenium_test
-on: [push]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  checks: write
+  pull-requests: write
+  contents: read
+
 jobs:
   selenium_test:
     runs-on: ubuntu-latest
@@ -10,6 +20,7 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
+
       - name: Check code for errors by flaje8 and format code with black
         uses: ricardochaves/python-lint@v1.4.0
         with:
@@ -26,16 +37,26 @@ jobs:
           extra-black-options: ". -S"
           extra-mypy-options: ""
           extra-isort-options: ""
+
       - name: install Chrome
         uses: browser-actions/setup-chrome@latest 
       - name: check Chrome version
         run: chrome --version
+
       - name: Install Python dependencies
         uses: py-actions/py-dependency-install@v3
-      - name: Run the pytest
-        run: pytest -s -v
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
+
+      - name: Run the pytest and generate junit xml report
+        run: pytest --junitxml report.xml
+
+      - name: Create test summary
+        uses: test-summary/action@v1.0
         with:
-          name: report
-          path: /home/runner/work/Selen/Selen/report/
+          paths: report.xml
+        if: always()
+
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          files: "report.xml"
