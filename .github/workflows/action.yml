@@ -43,8 +43,8 @@ jobs:
       - name: check Chrome version
         run: chrome --version
 
-      - name: Install Python dependencies
-        uses: py-actions/py-dependency-install@v3
+      - name: Python Dependency Installation
+        uses: py-actions/py-dependency-install@v3.0.0
 
       - name: Run the pytest and generate junit xml report
         run: pytest --junitxml report.xml
@@ -59,4 +59,4 @@ jobs:
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
-          files: "report.xml"
+          junit_files: "report.xml"
