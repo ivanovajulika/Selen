@@ -19,8 +19,6 @@ def test_password_is_empty():
     options.headless = True
     browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
 
-
-
     browser.get(link)
     browser.implicitly_wait(10)
 
