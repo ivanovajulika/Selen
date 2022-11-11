@@ -17,9 +17,9 @@ def test_password_is_empty():
     options = webdriver.ChromeOptions()
     options.add_argument("--window-size=1600,1080")
     options.headless = True
-    browser = webdriver.Chrome(
-        service=ChromeService(ChromeDriverManager().install()), options=options
-    )
+    browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+
+
 
     browser.get(link)
     browser.implicitly_wait(10)
@@ -33,5 +33,7 @@ def test_password_is_empty():
     browser.implicitly_wait(10)
     assert "inventory" not in browser.current_url, "Wrong page"
     error_message = browser.find_element(By.CLASS_NAME, "error-message-container")
-    assert (error_message.text == "Epic sadface: Password is required"), "Wrong error message"
+    assert (
+        error_message.text == "Epic sadface: Password is required"
+    ), "Wrong error message"
     browser.quit()
