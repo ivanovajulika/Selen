@@ -17,7 +17,9 @@ def test_password_is_empty():
     options = webdriver.ChromeOptions()
     options.add_argument("--window-size=1600,1080")
     options.headless = True
-    browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+    browser = webdriver.Chrome(
+        service=ChromeService(ChromeDriverManager().install()), options=options
+    )
 
     browser.get(link)
     browser.implicitly_wait(10)
